@@ -1,0 +1,43 @@
+<head>
+  <title>_materials</title>
+</head>
+
+<template name="layout">
+  <header>
+    <a class="brand" href="{{pathFor 'coreTemplate'}}">MaterialsHome</a>
+  </header>
+  {{> yield}}
+</template>
+
+<template name="coreTemplate">
+  <h1>_materials</h1>
+  <div id="wrapper">
+    {{#each entities}}
+      <a href="{{pathFor 'singleEntity'}}" id="internalWrapper">
+        <li><h2>{{this.name}}</h2></li>
+      </a>
+    {{/each}}
+    <button>New Entity</button>
+  </div>
+</template>
+
+<template name='singleEntity'>
+{{#if editing}}
+  <input type="text" value='{{name}}'>
+  <textarea>{{content}}</textarea>
+  <button id="saveButton">Save</button>
+{{else}}
+  <h1>{{name}}</h1>
+  <p id='mContent'>
+  {{#markdown}}
+{{content}}
+  {{/markdown}}
+  </p>
+  <button id="editButton">Edit</button>
+  <button id="deleteButton">Delete</button>
+{{/if}}
+</template>
+
+<template name="loading">
+  {{> spinner}}
+</template>

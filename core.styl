@@ -1,0 +1,93 @@
+@import 'jeet'
+@import 'nib'
+
+// edit()
+externalBg2 = url("http://api.thumbr.it/whitenoise-361x370.png?background=f6f8fbff&noise=6e6e6e&density=10&opacity=10")
+bg2 = url("http://api.thumbr.it/whitenoise-100x100.png?background=3a352fff&noise=626262&density=15&opacity=15")
+externalBg = url('bg.png')
+// externalBg = url("http://api.thumbr.it/whitenoise-361x370.png?background=f6f8fbff&noise=6e6e6e&density=10&opacity=10")
+
+// colorOne = lavender | lightblue | azure
+colorOne = #75706a//#424E5A
+
+body
+  color black//colorOne
+
+html
+  font-family freight-sans-pro, sans-serif
+  background externalBg2 repeat
+  font-size 13px
+  line-height 18px
+  center(95%)
+
+a
+  color #D1A990
+  text-decoration none
+  &:hover
+    border-bottom 1px solid black
+
+input, h1
+  color lavender
+  font-size 21px
+  align(horizontal)
+  text-align center
+  width 95%
+  height 30px
+  background externalBg repeat
+  border none
+
+textarea
+  font-size 16px
+  margin-top 120px
+  color #dedede
+  background externalBg repeat
+  width 100%
+  height 500px
+  overflow auto
+  resize vertical
+  outline-style solid
+  outline-offset 3px
+  outline-width 2px
+  outline-color colorOne
+  border none
+  &:focus
+    box-shadow 0px 0px 10px 3px colorOne
+
+#wrapper
+  align(horizontal)
+
+#internalWrapper
+  >li
+    color lighten(black, 30%)//colorOne
+    position relative
+    top 40px
+  display block
+  text-align center
+  height 100px
+  width 100px
+  border 2px solid gray///rgba(255,255,255,0.6) //#7c7771
+  box-shadow 0 0 3px ghostwhite
+  border-radius 100%
+  list-style none
+  text-indent -9999px
+  margin 50px
+  //transition 0.3s
+  &:hover
+    color black
+    text-indent -750px
+    border 2px solid gray
+    box-shadow 0 0 10px 1px  lightblue  //lighten(#75706a, 70%)      //(#75706a+#fff)
+
+
+button
+  box-shadow 0 0 1px 1px ghostwhite
+  padding 5px
+  button(lavender)
+
+#mContent
+  padding 40px
+  center(80%)
+
+#deleteButton
+  box-shadow 0 0 1px 1px white
+  button(darkred)
